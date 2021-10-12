@@ -54,6 +54,18 @@ public class LinkedList<T> {
         }
         PreviousNode.next = null;
     }
+    public Node<T> searchOperation (T data ) {
+        Node<T> node = new Node<>();
+        node=head;
+
+        while(node.data != data) {
+            node=node.next;
+            System.out.println("Element Found : " +data);
+            break;
+        }
+        return node;
+
+    }
     public void show() {
         Node<T> node = head;
         while (node.next != null) {
@@ -69,7 +81,7 @@ public class LinkedList<T> {
         list.addAtIndex(0,56);
         list.addAtIndex(1,30);
         list.add(70);
-        list.deleteFirst();
+        list.searchOperation(30);
         list.show();
     }
 }
