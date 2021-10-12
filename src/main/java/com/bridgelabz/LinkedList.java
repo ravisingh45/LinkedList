@@ -38,6 +38,13 @@ public class LinkedList<T> {
             node.next = newNode;
         }
     }
+    public void deleteFirst (){
+        if (head != null) {
+            Node<T> Head = head.next;
+
+            head=Head;
+        }
+    }
     public void show() {
         Node<T> node = head;
         while (node.next != null) {
@@ -51,8 +58,9 @@ public class LinkedList<T> {
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
         list.addAtIndex(0,56);
-        list.add(30);
+        list.addAtIndex(1,30);
         list.add(70);
+        list.deleteFirst();
         list.show();
     }
 }
