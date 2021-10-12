@@ -8,7 +8,7 @@ public class LinkedList<T> {
         if (head == null) {
             head = newNode;
         }
-        else {
+         else {
             Node<T> node = head;
             while (node.next != null) {
                 node = node.next;
@@ -23,7 +23,21 @@ public class LinkedList<T> {
         node.next = head;
         head = node;
     }
+    public void addAtIndex(int index, T data) {
+        Node<T> newNode = new Node<>();
+        newNode.data = data;
 
+        if (index == 0) {
+            addAtStart(data);
+        } else {
+            Node<T> node = head;
+            for (int i = 0; i < index - 1; i++) {
+                node = node.next;
+            }
+            newNode.next = node.next;
+            node.next = newNode;
+        }
+    }
     public void show() {
         Node<T> node = head;
         while (node.next != null) {
@@ -36,9 +50,9 @@ public class LinkedList<T> {
 
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
-        list.add(56);
-        list.addAtStart(30);
-        list.addAtStart(70);
+        list.addAtIndex(0,56);
+        list.add(30);
+        list.add(70);
         list.show();
     }
 }
