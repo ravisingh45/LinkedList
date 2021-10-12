@@ -45,6 +45,15 @@ public class LinkedList<T> {
             head=Head;
         }
     }
+    public void deleteLast() {
+        Node<T> node = head;
+        Node<T> PreviousNode = head;
+        while (node.next != null) {
+            PreviousNode = node;
+            node = node.next;
+        }
+        PreviousNode.next = null;
+    }
     public void show() {
         Node<T> node = head;
         while (node.next != null) {
