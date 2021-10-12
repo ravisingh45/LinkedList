@@ -66,6 +66,17 @@ public class LinkedList<T> {
         return node;
 
     }
+    public void findNodeAddData(T data, T AddedData) {
+        Node<T> node = searchOperation(data);
+        Node<T> newNode = new Node<T>();
+        newNode=head;
+        int count=1;
+        while(node != newNode) {
+            newNode=newNode.next;
+            count++;
+        }
+        addAtIndex(count, AddedData);
+    }
     public void show() {
         Node<T> node = head;
         while (node.next != null) {
@@ -81,7 +92,7 @@ public class LinkedList<T> {
         list.addAtIndex(0,56);
         list.addAtIndex(1,30);
         list.add(70);
-        list.searchOperation(30);
+        list.findNodeAddData(30,40);
         list.show();
     }
 }
